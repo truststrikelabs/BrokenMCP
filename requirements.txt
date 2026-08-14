@@ -1,0 +1,4 @@
+# Shared by every lab in this repo. The GUI in gui/ needs nothing beyond the standard library.
+mcp>=1.23,<2
+starlette>=0.50,<1
+uvicorn>=0.38,<1

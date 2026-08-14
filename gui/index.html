@@ -1,0 +1,142 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="theme-color" content="#F8FAFC" />
+    <title>BrokenMCP Corp</title>
+    <meta name="description" content="BrokenMCP Corp OWASP MCP Top 10 security lab" />
+    <link rel="stylesheet" href="assets/styles.css" />
+  </head>
+  <body>
+    <div class="app-shell">
+      <aside class="sidebar" id="sidebar">
+        <div class="brand">
+          <div class="brand-mark" aria-hidden="true">
+            <img src="assets/brokenmcp-logo.svg" alt="" />
+          </div>
+          <div>
+            <strong>BrokenMCP Corp</strong>
+            <span id="brandOrg"></span>
+          </div>
+        </div>
+
+        <nav class="workspace-nav" aria-label="Lab navigation">
+          <p class="nav-label">OWASP MCP Top 10</p>
+          <div id="labNav"></div>
+        </nav>
+
+        <div class="sidebar-footer">
+          <div class="avatar avatar-coral" aria-hidden="true" id="avatar"></div>
+          <div class="sidebar-user">
+            <strong id="serverName"></strong>
+            <span id="serverEndpoint"></span>
+          </div>
+          <span class="online-dot" id="onlineDot" title="Server available"></span>
+        </div>
+      </aside>
+
+      <div class="sidebar-scrim" id="sidebarScrim"></div>
+
+      <main class="main-area">
+        <header class="topbar">
+          <button class="icon-button mobile-menu" id="mobileMenu" type="button" title="Open navigation" aria-label="Open navigation">&#9776;</button>
+          <div class="topbar-title">
+            <span id="topbarCode"></span>
+            <strong id="topbarTitle"></strong>
+          </div>
+          <div class="topbar-progress" aria-label="Challenge progress">
+            <span>Challenges</span>
+            <strong id="topbarChallengeProgress"></strong>
+          </div>
+          <button class="secondary-button" type="button" data-reset-lab><span aria-hidden="true">&#8635;</span> Reset progress</button>
+        </header>
+
+        <section class="content lab-content" id="labView">
+          <section class="lab-status" id="labStatus" role="status" aria-label="Lab status">
+            <div class="status-cell">
+              <p class="status-k">Status</p>
+              <div class="status-state"><span class="status-dot"></span><span id="statusText">Checking</span></div>
+            </div>
+            <div class="status-cell">
+              <p class="status-k">Server</p>
+              <p class="status-v mono" id="statusServer"></p>
+            </div>
+            <div class="status-cell grow">
+              <p class="status-k">MCP endpoint</p>
+              <p class="status-v mono" id="statusEndpoint"></p>
+            </div>
+            <div class="status-cell">
+              <p class="status-k">Flags</p>
+              <p class="status-v num" id="statusFlags"></p>
+            </div>
+            <div class="status-cell status-actions">
+              <button class="ghost-button primary-ghost" type="button" id="statusToggle">Start lab</button>
+              <button class="ghost-button" type="button" id="statusPrimary">Copy endpoint</button>
+            </div>
+          </section>
+
+          <section class="status-detail hidden" id="statusDetail">
+            <p id="statusDetailText"></p>
+            <div class="status-commands hidden" id="statusCommands">
+              <pre><code id="statusCommandsCode"></code></pre>
+              <button class="ghost-button" type="button" id="statusCopyCommands">Copy</button>
+            </div>
+          </section>
+
+          <section class="lab-brief hidden" id="labBrief" aria-label="Lab background">
+            <div>
+              <h2>Lab background</h2>
+              <div id="briefBackground"></div>
+            </div>
+            <div>
+              <h2>Who you are</h2>
+              <div id="briefRole"></div>
+              <pre class="brief-code hidden" id="briefCommandBlock"><code id="briefCommand"></code></pre>
+              <pre class="brief-code hidden" id="briefOutputBlock"><code id="briefOutput"></code></pre>
+              <div class="brief-rail" id="briefOutputRail" aria-hidden="true"><span class="brief-thumb" id="briefOutputThumb"></span></div>
+            </div>
+          </section>
+
+          <section class="lab-guide" aria-label="Challenges">
+            <div id="challengeList">
+              <div class="skeleton-row" aria-hidden="true"><span class="skeleton skeleton-number"></span><span class="skeleton skeleton-text"></span><span class="skeleton skeleton-badge"></span></div>
+              <div class="skeleton-row" aria-hidden="true"><span class="skeleton skeleton-number"></span><span class="skeleton skeleton-text"></span><span class="skeleton skeleton-badge"></span></div>
+              <div class="skeleton-row" aria-hidden="true"><span class="skeleton skeleton-number"></span><span class="skeleton skeleton-text"></span><span class="skeleton skeleton-badge"></span></div>
+            </div>
+          </section>
+
+          <section class="incident-report hidden" id="incidentReport" aria-labelledby="incidentReportTitle">
+            <header class="incident-report-header">
+              <div>
+                <p class="eyebrow">Mission complete</p>
+                <h2 id="incidentReportTitle"></h2>
+              </div>
+              <span id="reportLabel"></span>
+            </header>
+            <div class="report-metrics">
+              <div><span>Flags captured</span><strong id="reportFlags"></strong></div>
+              <div><span>Severity</span><strong id="reportSeverity"></strong></div>
+            </div>
+            <div class="report-columns">
+              <div>
+                <h3>Evidence confirmed</h3>
+                <ol id="reportEvidence"></ol>
+              </div>
+              <div>
+                <h3>Recommended fixes</h3>
+                <ul id="reportFixes"></ul>
+              </div>
+            </div>
+            <div class="report-actions">
+              <button class="secondary-button" type="button" data-print-report>Print report</button>
+            </div>
+          </section>
+        </section>
+      </main>
+    </div>
+
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+    <script src="assets/lab.js"></script>
+  </body>
+</html>
