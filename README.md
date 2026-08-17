@@ -22,6 +22,8 @@ python3 gui/run.py
 
 Open http://127.0.0.1:8410 and pick the OWASP MCP lab you want, then click "Start lab".
 
+![BrokenMCP GUI with the OWASP MCP lab picker](gui/assets/lab_screenshot.png)
+
 ### 2. Using the CLI
 
 ```bash
